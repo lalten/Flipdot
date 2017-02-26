@@ -30,7 +30,7 @@
 //     L LARGE
 //   String:
 //     Contains the characters to be printed 
-//   "\": 
+//   '\n': 
 //     The command lines is terminated by the return character
 //     It gets evaluated after reception of that character
 //             
@@ -75,7 +75,7 @@ void loop() {
     }
   
     // ==== If command string is complete... =======
-    if (c=='\\') {
+    if (c=='\n') {
 
       cmd = commandLine.charAt(0);
       if (commandLine.charAt(2) == 'B') color = 1; else color = 0;
