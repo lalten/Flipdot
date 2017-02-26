@@ -9,9 +9,8 @@
 #include "font8x12.h"
 
 //================== Constants ===============================
-#define X_SIZE 168    // 128 column
-#define Y_SIZE 4      // 28 rows (represented by 4 bytes)
-#define Y_PIXELS 24   // True Y-Size if the display
+
+#include "Flipdot.h"
 #define OFF 0
 #define ON 1
 
@@ -32,8 +31,8 @@ unsigned char frameBuffer[X_SIZE][Y_SIZE];
 void clearAll(int color) {
    int i,j;
 
-//   for (i=0; i<X_SIZE; i++) {
-   for (i=0; i<168; i++) {
+   for (i=0; i<X_SIZE; i++) {
+//   for (i=0; i<168; i++) {
      Serial.println(i);
      for (j=0; j<Y_PIXELS; j++) {
        setFrameBuffer(i,j,color);

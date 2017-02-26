@@ -54,7 +54,7 @@ void flipdotSetup() {
 //===================================================
 void pixel(int x, int y, int state) {
   int panelNr, colNr;
-  if ((x<169) && (x>=0) && (y>=0) && (y<32)) {
+  if ((x<X_SIZE) && (x>=0) && (y>=0) && (y<Y_PIXELS)) {
       panelNr = x/28;   // integer division
       colNr = x%28;     // modulo division
       colSelect(colNr,state);
