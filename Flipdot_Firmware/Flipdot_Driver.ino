@@ -79,11 +79,11 @@ void rowSelect(int row, int state) {
   if (row>6) row++;
   if (row>14) row++;
   if (row>22) row++;
-  digitalWrite(3, row & 4);   // Scrambled to make up for wiring
-  digitalWrite(4, row & 8);
-  digitalWrite(5, row & 16);
-  digitalWrite(6, row & 1);
-  digitalWrite(7, row & 2);
+  digitalWrite(3, row & 0b00100);   // Scrambled to make up for wiring
+  digitalWrite(4, row & 0b01000);
+  digitalWrite(5, row & 0b10000);
+  digitalWrite(6, row & 0b00001);
+  digitalWrite(7, row & 0b00010);
   if (state == SET) {
      digitalWrite(9, HIGH); // SET (immer zuerst nach HIGH)
      digitalWrite(8, LOW);  // Diese beiden Pins müssen immer komplementär sein - sonst raucht es
@@ -107,11 +107,11 @@ void colSelect(int col, int state) {
   if (col>15) col++;
   if (col>23) col++;
 
-  digitalWrite(A0, col & 1);
-  digitalWrite(A1, col & 2);
-  digitalWrite(A2, col & 4);
-  digitalWrite(A3, col & 8);
-  digitalWrite(A4, col & 16);
+  digitalWrite(A0, col & 0b00001);
+  digitalWrite(A1, col & 0b00010);
+  digitalWrite(A2, col & 0b00100);
+  digitalWrite(A3, col & 0b01000);
+  digitalWrite(A4, col & 0b10000);
 
   digitalWrite(A5, state);
 
@@ -127,9 +127,9 @@ void colSelect(int col, int state) {
 void writePanel(int panel) {
 
   if (panel >= 0) {
-    digitalWrite(10, panel & 1);
-    digitalWrite(11, panel & 2);
-    digitalWrite(12, panel & 4);
+    digitalWrite(10, panel & 0b00001);
+    digitalWrite(11, panel & 0b00010);
+    digitalWrite(12, panel & 0b00100);
 
     digitalWrite(13, LOW);   // Kurzer Puls, der das Panel enabled
     delay(10);
