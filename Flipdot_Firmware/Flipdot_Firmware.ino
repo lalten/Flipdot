@@ -44,6 +44,7 @@ String commandLine;
 boolean umlaut;
 
 void setup() {
+  while (!Serial) ; // Wait for Serial interface to be ready on some Arduino types
   Serial.begin(115200);
   Serial.println("Ready to flip dots!");
   flipdotSetup();
