@@ -44,8 +44,8 @@ String commandLine;
 boolean umlaut;
 
 void setup() {
-  
-  Serial.begin(9600);
+  Serial.begin(115200);
+  Serial.println("Ready to flip dots!");
   flipdotSetup();
   umlaut = false;
 }
