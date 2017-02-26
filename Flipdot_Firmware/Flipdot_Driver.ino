@@ -6,7 +6,7 @@
 // #### DISPLAY CAN EASILY BY DESTROYED ######
 //
 // Arduino Pins:
-//     Digital 0..5     Row#
+//     Digital 3..7     Row#
 //     Digital 8        Row SET
 //     Digital 9        Row RESET
 //     Digital 10..12   Panel#
